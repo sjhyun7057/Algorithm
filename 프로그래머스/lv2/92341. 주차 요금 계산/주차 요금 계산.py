@@ -6,8 +6,8 @@ def solution(fees, records):
             record_dict[record_list[1]] = [record_list[0], 0]
         else:
             if record_dict[record_list[1]][0]:
-                record_dict[record_list[1]][1] += ((int(record_list[0][:2]) - int(record_dict[record_list[1]][0][:2])) * 60 + (int(record_list[0][3:]) - int(record_dict[record_list[1]][0][3:])))
-                record_dict[record_list[1]][0] = 0
+                record_dict[record_list[1]][1] += ((int(record_list[0][:2]) - int(record_dict[record_list[1]][0][:2])) * 60 + (int(record_list[0][3:]) - int(record_dict[record_list[1]][0][3:]))) # 총 분 을 계산
+                record_dict[record_list[1]][0] = 0 # 아웃된 경우 in시간 초기화
             else:
                 record_dict[record_list[1]][0] = record_list[0]
     answer = []
@@ -19,7 +19,7 @@ def solution(fees, records):
         if value[1] <= fees[0]:
             result = fees[1]
         else:
-            if (value[1]-fees[0])%fees[2]:
+            if (value[1]-fees[0])%fees[2]: # 요금 계산
                 result = fees[1] + ((value[1]-fees[0])//fees[2])*fees[3] + fees[3]
             else:
                 result = fees[1] + ((value[1]-fees[0])//fees[2])*fees[3]
