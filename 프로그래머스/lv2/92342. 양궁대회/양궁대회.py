@@ -5,7 +5,7 @@ def solution(n, info):
     def calculate_score(lst, info):
         idx = 0
         score = 0
-        for i, j in zip(lst,info):
+        for i, j in zip(lst, info):
             if i <= j and j :
                 score = score - (10-idx)
             elif i > j:
