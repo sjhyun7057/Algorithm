@@ -12,8 +12,8 @@ def solution(n, k):
         return top
     
     top = find_top_k(n, k)
-    
-    def find_p(top, k, n):
+    print(top)
+    def find_p(top, k, n): 
         nonlocal k_word
         for t in range(top, -1, -1):
             if n == 0:
@@ -26,7 +26,7 @@ def solution(n, k):
                     break
             else:
                 k_word += '0'
-
+    
     find_p(top, k, n)
 
     def check_prime(num_lst):
